@@ -305,7 +305,7 @@ function get_args() {
 function get_latest_modx_version() {
 	print "Finding most recent version of MODX...";
 	$contents = file_get_contents(INFO_PAGE);
-	preg_match('#'.preg_quote('<h3>MODX Revolution ').'(.*)'. preg_quote('</h3>','/').'#msU',$contents,$m1);
+	preg_match('#'.preg_quote('<h2>Current Version – ').'(.*)'. preg_quote('</h2>','/').'#msU',$contents,$m1);
 	if (!isset($m1[1])) {
 	    abort('Version could not be detected on '. INFO_PAGE);
 	}
